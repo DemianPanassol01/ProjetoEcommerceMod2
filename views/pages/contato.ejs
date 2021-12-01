@@ -1,0 +1,80 @@
+<%- include('../layouts/head') %>
+<link rel="stylesheet" href="/css/flash.css">
+<link rel="stylesheet" href="/css/contato.css">
+<title>Contato | Neck Massager PRO </title>
+
+</head>
+
+<body>
+    <%- include('../layouts/header') %>
+
+    <main>
+        <% if(success && success.length) {%>
+        <div class="container-flash flash-success">
+            <%= success %>
+            <button type="button" class="btn-close-flash"><i class="fas fa-times"></i></button>
+        </div>
+        <% } %>
+
+        <% if(error && error.length) {%>
+        <div class="container-flash flash-error">
+            <%= error %>
+            <button type="button" class="btn-close-flash"><i class="fas fa-times"></i></button>
+        </div>
+        <% } %>
+        <h1>Entre em Contato</h1>
+
+        <h4 class="black">Envie suas dúvidas, sugestões ou reclamações</h4>
+
+        <h4>E-mail:</h4>
+        <p>contatoneckmassager@gmail.com</p>
+
+        <h4>Whatsapp:</h4>
+        <p>+55 54 99196-7411</p>
+
+        <h4>Atendimento:</h4>
+        <p class="atendimento">Segunda à Sexta-Feira: 08:00h - 20:00h</p>
+        <p>Sábado: 08:00h - 12:00h</p>
+
+        <h2>Entre em Contato</h2>
+
+        <form method="POST" class="needs-validation" novalidate>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Nome" required name="client[name]" id="inputNome">
+                <label for="inputNome">Nome</label>
+                <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+            </div>
+
+            <div class="form-floating">
+                <input type="tel" class="form-control" placeholder="Telefone" required name="client[phone]"
+                    id="inputTelefone">
+                <label for="inputTelefone">Telefone</label>
+                <div class="invalid-feedback">Insira um número válido</div>
+            </div>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" placeholder="E-mail" required name="client[email]"
+                    id="inputEmail">
+                <label for="inputEmail">E-mail</label>
+                <div class="invalid-feedback">Insira um e-mail válido</div>
+            </div>
+
+            <div class="form-floating text-area">
+                <textarea class="form-control" placeholder="Sua Mensagem" id="mensagemCliente" name="client[message]"
+                    required></textarea>
+                <label for="mensagemCliente">Sua mensagem</label>
+                <div class="invalid-feedback">Insira uma mensagem</div>
+            </div>
+
+            <div class="buttons">
+                <button type="reset" class="btn cancel">Cancelar</button>
+                <button class="btn send" type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/flash.js"></script>
+    <script src="/js/forms.js"></script>
+    <%- include('../layouts/footer') %>
+</body>
+
+</html>

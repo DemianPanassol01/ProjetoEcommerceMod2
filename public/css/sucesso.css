@@ -1,0 +1,104 @@
+header {
+    position: absolute;
+    top: 0;
+    padding-top: 1.5rem;
+    width: 100%;
+    height: 42%;
+    background-color: #53B5FF;
+    z-index: -1;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+main section {
+    height: fit-content;
+    margin: 80px 1rem 0;
+    padding: 2.5rem 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 3px 5px rgba(9, 30, 66, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section img {
+    margin-bottom: 2.5rem;
+}
+
+section h2 {
+    margin-bottom: .5rem;
+}
+
+section small {
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.info-msg {
+    max-width: 368px;
+    margin-bottom: 2.5rem;
+}
+
+.info-text {
+    max-width: 326px;
+}
+
+section span {
+    font-weight: bold;
+}
+
+main>p {
+    text-align: left;
+    max-width: 530px;
+    font-size: 14px;
+    margin: 2rem 1rem 1rem;
+}
+
+header a {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.fa-arrow-left {
+    color: #ffffff;
+    font-size: 24px;
+    margin-right: .5rem;
+}
+
+header a:hover {
+    color: blue;
+}
+
+header a:hover .fa-arrow-left {
+    color: blue;
+}
+
+@media (min-width: 700px) {
+    main section {
+        max-width: 500px;
+        margin: 120px auto 0;
+    }
+
+    main>p {
+        margin: 2rem 1rem 1rem auto;
+        text-align: right;
+    }
+
+    header {
+        padding-top: 2rem;
+    }
+
+    header a {
+        margin-left: 2rem;
+    }
+}
+

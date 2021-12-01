@@ -1,0 +1,40 @@
+/* FLASH */
+.container-flash {
+    padding: .5rem 1rem;
+    color: #fff;
+    font-weight: 400;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.flash-success {
+    background-color: #198754;
+}
+
+.flash-error {
+    background-color: #dc3545;
+}
+
+.btn-close-flash {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: .25em .25em;
+    background-color: transparent;
+    border: 0;
+    border-radius: .25rem;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.btn-close-flash:hover {
+    text-decoration: none;
+    opacity: .75;
+}
+
+.fa-times {
+    font-size: 20px;
+}

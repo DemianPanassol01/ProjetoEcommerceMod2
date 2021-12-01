@@ -1,0 +1,234 @@
+/*Cabeçalho e Rodapé padrões*/
+
+.lista-links-desktop {
+  display: none;
+}
+
+header {
+  background-color: var(--main-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 2000;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.75rem;
+  padding: 0 1rem;
+}
+
+header nav h3 {
+  color: var(--text-white);
+}
+
+.menu-area-mobile {
+  height: 100%;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* CSS do menu mobile colapsado */
+.menu-colapse {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  width: 304px;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  z-index: 999;
+  padding: 27px 1rem 1rem 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-show {
+  right: 0;
+}
+
+.botao-fechar {
+  width: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.container-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.menu-link-item {
+  color: var(--text-white);
+  margin-right: 1rem;
+}
+
+.linha-menu {
+  border-bottom: 1px solid #f7f0f5;
+  width: 13.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Secção do footer */
+.footer-layout {
+  background-color: var(--footer-color);
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footer-layout section {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1rem 2.5rem;
+}
+
+.about-us {
+  margin-bottom: 2.5rem;
+}
+
+.about-us h5 {
+  max-width: 370px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.links nav {
+  margin-bottom: 2.5rem;
+}
+
+.footer-layout h5,
+.footer-layout h4,
+nav h5 a {
+  color: var(--text-white);
+}
+
+h5 a {
+  font-size: 14px;
+}
+
+.footer-layout h5 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-layout h4 {
+  margin-bottom: 1rem;
+}
+
+.botom-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 2.5rem 0 5rem;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+@media (min-width: 479px) {
+  header nav {
+    padding: 0 2rem;
+  }
+
+  .links {
+    margin-right: 2rem;
+  }
+
+  .footer-layout section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.5rem 2rem 2.5rem;
+  }
+
+  .botom-line {
+    margin: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  header nav {
+    width: 75rem;
+    height: 4rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .menu-area-mobile {
+    display: none;
+  }
+
+  .menu-colapse {
+    display: none;
+  }
+
+  .lista-links-desktop {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+  }
+
+  .lista-links-desktop li a {
+    color: var(--text-white);
+    font-weight: 600;
+    line-height: 120%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .lista-links-desktop li a:hover {
+    color: var(--secondary-color);
+  }
+
+  .about-us h5 {
+    max-width: 400px;
+  }
+
+  /* Footer */
+  .footer-layout section {
+    width: 75rem;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  h5 a {
+    font-size: 1rem;
+  }
+
+  .links {
+    flex-direction: row;
+  }
+
+  .links nav {
+    margin-bottom: 0;
+  }
+
+  .links nav:first-of-type {
+    margin-right: 5rem;
+  }
+}
+
+/* CSS das Páginas Secundárias */
+main {
+  padding: 5.375rem 1rem 5rem;
+}
+
+@media (min-width: 479px) {
+  main {
+    padding: 6.875rem 2rem 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 9.1875rem 6.375rem 6rem;
+  }
+}

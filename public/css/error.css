@@ -1,0 +1,39 @@
+main {
+    height: 100vh;
+    padding-top: 8rem;
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container h3 {
+    margin: 2rem 0 .5rem;
+}
+
+.container h5 {
+    margin-bottom: 2.5rem;
+}
+
+.container a {
+    padding: 1rem 2rem;
+    border: 2px solid #53B5FF;
+    width: fit-content;
+    margin: auto;
+    font-weight: 500;
+    color: #53B5FF;
+}
+
+.container a:hover {
+    color:#2288d6;
+    border: 2px solid #2288d6;
+}

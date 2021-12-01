@@ -1,0 +1,106 @@
+h1,
+h2,
+h4,
+h5 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+p:last-of-type {
+    margin-bottom: 3rem;
+}
+
+.atendimento {
+    margin-bottom: 0.5rem;
+}
+
+.black {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.form-floating {
+    max-width: 522px;
+    margin-bottom: 1.5rem;
+}
+
+#mensagemCliente {
+    width: 100%;
+    height: 135px;
+}
+
+.buttons {
+    width: fit-content;
+    margin: 0 0 0 auto;
+}
+
+.cancel,
+.send {
+    padding: 1rem 3rem;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.cancel {
+    color: var(--main-color);
+}
+
+.send {
+    background-color: var(--main-color);
+    color: var(--text-white);
+}
+
+@media (min-width: 767px) {
+
+    h1,
+    .black {
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .black {
+        margin-bottom: 3rem;
+    }
+
+    p,
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    p:last-of-type {
+        margin-bottom: 4rem;
+    }
+
+    #mensagemCliente {
+        margin-bottom: 0.5rem;
+    }
+
+    .buttons {
+        margin-left: 205px;
+    }
+}
+
+@media (min-width: 1280px) {
+    #mensagemCliente {
+        height: 182px;
+    }
+
+    .text-area {
+        max-width: 789px;
+    }
+
+    .buttons {
+        margin-left: 472px;
+    }
+}

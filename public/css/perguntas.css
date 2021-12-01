@@ -1,0 +1,32 @@
+h1 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+h4 {
+    margin-bottom: 1rem;
+}
+
+p:first-of-type {
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 479px) {
+    h1 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    p:first-of-type {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+}

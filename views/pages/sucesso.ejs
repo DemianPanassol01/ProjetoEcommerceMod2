@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/sucesso.css">
+    <title>Sucesso | Neck Massager PRO</title>
+</head>
+
+<body>
+    <header>
+        <a href="/"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
+    </header>
+    <main>
+        <section>
+            <img src="https://res.cloudinary.com/demiandb/image/upload/v1638221104/neckMassagerPRO/svg/fig_success_hsysmp.svg"
+                alt="Imagem Ilustrativa de pedido confirmado">
+
+            <h2>Pedido Confirmado</h2>
+            <small>Pedido n° <%= info.id %></small>
+
+            <% if (info.status_detail == 'accredited') { %>
+            <p class="info-msg"><%= info.msg %> <span><%= info.statement_descriptor %></span></p>
+            <p class="info-text">Agora é só esperar: Seu produto irá chegar em até 15 dias úteis*</p>
+            <% } else { %>
+            <p class="info-msg"><%= info.msg %></p>
+            <p class="info-text">Assim que seu pagamento for aprovado, seu produto irá chegar em até 15 dias úteis*</p>
+            <% } %>
+            
+        </section>
+
+        <p>*Sujeito a atrasos devido à pandemia ou a situações extraordinárias. Entraremos
+            em contato caso a situação venha ocorrer.</p>
+    </main>
+
+</body>
+
+</html>
+

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/flash.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <title>Checkout | Neck Massager PRO</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h3>Checkout</h3>
+            <a href="/contate-nos">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container-form">
+            <form method="post" action="/process_payment">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item item-selected">
+                        <i class="fas fa-truck fa-2x"></i><small class="bread-text">Dados de Entrega</small>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <i class="fas fa-credit-card fa-2x"></i><small class="bread-text">Forma de Pagamento</small>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <i class="fas fa-clipboard-list fa-2x"></i><small class="bread-text">Revise seu Pedido</small>
+                    </li>
+                </ol>
+
+                <!-- Flash -->
+                <% if(error && error.length) {%>
+                <div class="container-flash flash-error">
+                    <%= error %>
+                    <button type="button" class="btn-close-flash"><i class="fas fa-times"></i></button>
+                </div>
+                <% } %>
+                <!-- Flash -->
+
+               <!-- Início Seção dos Inputs dos Dados de Entrega-->
+                <div id="viewSection" class="inputs-entrega show">
+                    <div class="input-form">
+                        <label for="userEmail">E-mail</label>
+                        <input type="text" name="user[email]" id="userEmail" inputEntrega value="<%= client.email %>">
+                        <div>Insira um e-mail válido</div>
+                    </div>
+
+                    <div class="input-form">
+                        <label for="userPhone">Telefone</label>
+                        <input type="phone" name="user[phone]" id="userPhone" inputEntrega value="<%= client.phone %>">
+                        <div>Insira um número válido</div>
+                    </div>
+
+                    <span class="linha"></span>
+
+                    <div class="input-form">
+                        <label for="userAdress">Endereço</label>
+                        <input type="text" name="user[adress]" id="userAdress" autocomplete="street-address"
+                            inputEntrega value="<%= client.adress %>">
+                        <div>Insira o seu endereço</div>
+                    </div>
+
+                    <!-- Início da Seção Flex de Inputs do N° da casa e CEP -->
+                    <div class="input-form-2">
+
+                        <div class="input-form">
+                            <label for="userAdressNumber">N°</label>
+                            <input type="tel" name="user[adressNumber]" id="userAdressNumber" inputEntrega
+                                value="<%= client.adressNumber %>">
+                            <div>Insira um n° válido</div>
+                        </div>
+
+                        <div class="input-form">
+                            <label for="userCEP">CEP</label>
+                            <input type="tel" name="user[CEP]" id="userCEP" autocomplete="postal-code" maxlength="9"
+                                inputEntrega value="<%= client.cep %>">
+                            <div>Insira um CEP válido</div>
+                        </div>
+
+                    </div>
+                    <!-- Fim da Seção Flex de Inputs do N° da casa e CEP -->
+
+                    <!-- Início da Seção Flex de Inputs da Cidade e Estado -->
+                    <div class="input-form-3">
+
+                        <div class="input-form">
+                            <label for="userCity">Cidade</label>
+                            <input type="text" name="user[city]" id="userCity" autocomplete="address-level2"
+                                inputEntrega value="<%= client.city %>">
+                            <div>Insira a sua cidade</div>
+                        </div>
+
+                        <div class="input-form">
+                            <label for="userState">Estado</label>
+                            <input type="text" name="user[state]" id="userState" autocomplete="address-level1"
+                                inputEntrega value="<%= client.state %>">
+                            <div>Insira o seu estado</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Fim da Seção Flex de Inputs da Cidade e Estado -->
+
+                    <button type="button" class="btn-prox" id="proxPag">Para o Pagamento</button>
+                    <span class="msg-lemb">Preencha antes todos os campos</span>
+
+                </div>
+                <!-- Fim Seção dos Inputs dos Dados de Entrega-->
+
+                <!-- Início da Seção dos Inputs dos Dados de Entrega -->
+                <div id="viewSection" class="inputs-pagamento">
+                    <div class="input-form">
+                        <label for="userName">Nome Completo</label>
+                        <input type="text" name="user[name]" id="userName" autocomplete="name" inputPagamento
+                            value="<%= client.name %>">
+                        <div>Insira seu nome completo</div>
+                    </div>
+
+                    <div class="input-form">
+                        <label for="userCPF">CPF</label>
+                        <input type="tel" name="user[CPF]" id="userCPF" maxlength="14" inputPagamento
+                            value="<%= client.cpf %>">
+                        <div>Informe um CPF válido</div>
+                    </div>
+
+                    <div class="input-form">
+                        <label for="userCCNumber">Número do Cartão</label>
+                        <input type="tel" id="userCCNumber" autocomplete="cc-number" maxlength="19" inputPagamento>
+                        <div>Número de cartão inválido ou incompleto, insira um número válido</div>
+                    </div>
+
+                    <div class="input-form-4">
+                        <div class="input-form-5">
+                            <div class="input-form">
+                                <label for="userccExpMonth">Mês</label>
+                                <select id="userccExpMonth" autocomplete="cc-exp-month">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+
+                            <div class="input-form">
+                                <label for="userccExpYear">Ano</label>
+                                <select id="userccExpYear" autocomplete="cc-exp-year">
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-form">
+                            <label for="userCCCVC">CVC</label>
+                            <input type="tel" id="userCCCVC" autocomplete="cc-csc" maxlength="3" inputPagamento>
+                            <div>Insira um numero válido</div>
+                        </div>
+                    </div>
+
+                    <div class="input-form">
+                        <label for="userInstallment">Parcelas</label>
+                        <select disabled name="user[installment]" id="userInstallment">
+                            <option value="0">Escolha a quantidade de parcelas</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-prox" id="proxPag">Revise seu Pedido</button>
+                    <span class="msg-lemb">Preencha antes todos os campos</span>
+                    <a id="0" data-prev class="prevPag">Voltar para Entrega</a>
+                </div>
+                <!-- Fim da Seção dos Inputs dos Dados de Entrega --> 
+
+                <!-- Início da Seção do Resumo -->
+                <div id="viewSection" class="revisao">
+
+                    <div>
+                        <h5 class="h5-prev">Endereço de Entrega: <a id="1" class="edit-prev" data-prev>editar</a></h5>
+                        <p><span id="confEnd"></span></p>
+                    </div>
+
+                    <div>
+                        <h5 class="h5-prev">Dados para Contato: <a id="1" class="edit-prev" data-prev>editar</a></h5>
+                        <p><span id="confCont"></span></p>
+                    </div>
+
+                    <div>
+                        <h5 class="h5-prev">Forma de Pagamento: <a id="2" class="edit-prev" data-prev>editar</a></h5>
+                        <p><span id="confPag"></span></p>
+                        <p><span id="confParcel"></span></p>
+                    </div>
+
+                    <button type="submit" class="btn-prox btn-comprar">Comprar</button>
+
+                </div>
+                <!-- Fim da Seção do Resumo -->
+
+                <div class="img-powered">
+                    <p>Powered By</p>
+                    <div class="img-selos">
+                        <img src="/img/png/mercado_pago.png" alt="Logo mercado pago">
+                        <img src="/img/png/google_site_seguro.png" alt="Logo google site seguro">
+                    </div>
+                </div>
+
+                <!-- Secção dos inputs escondidos (NÃO MECHER!!!!!!!!!!)-->
+                <input type="hidden" id="form-checkout__cardNumber" value="">
+                <input type="hidden" id="form-checkout__cardExpirationMonth" value="" />
+                <input type="hidden" id="form-checkout__cardExpirationYear" value="" />
+                <input type="hidden" id="form-checkout__identificationNumber" name="payment[identificationNumber]"
+                    value="" />
+
+                <input type="hidden" id="form-checkout__issuer" name="payment[issuer]" value="">
+                <input type="hidden" name="payment[identificationType]" id="form-checkout__identificationType"
+                    value="CPF">
+
+                <input type="hidden" id="MPHiddenInputToken" name="payment[MPHiddenInputToken]" value="" />
+                <input type="hidden" id="MPHiddenInputPaymentMethod" name="payment[MPHiddenInputPaymentMethod]"
+                    value="" />
+                <input type="hidden" id="transactionAmmount" name="payment[transactionAmmount]"
+                    value="<%= produto.value %>" />
+                <input type="hidden" id="description" name="payment[description]" value="<%= produto.description %> " />
+            </form>
+        </section>
+
+        <section class="container-resumo">
+            <div class="img-bg-produto"><img
+                    src="https://res.cloudinary.com/demiandb/image/upload/v1637866430/neckMassagerPRO/img_produto_7_zygh7n.png"
+                    alt="Imagem do Produto"></div>
+            <p class="prod-desc"><span id="prodDesc"><%= produto.description %></span></p>
+            <p class="prod-qnt">Quantidade: <span><%= produto.qnt %></span></p>
+
+            <span class="linha"></span>
+
+            <div class="prod-info">
+                <p>Produto:</p>
+                <p>R$ <span id="prodVal"></span></p>
+            </div>
+
+            <div class="prod-info">
+                <p>Frete:</p>
+                <p>R$ <span id="prodFrete"><%= produto.frete %></span></p>
+            </div>
+
+            <div class="prod-info">
+                <h4>Você irá pagar:</h4>
+                <h4>R$ <span id="prodValTotal">189,90</span></h4>
+            </div>
+
+        </section>
+    </main>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="/js/flash.js"></script>
+    <script src="/js/checkout.js"></script>
+</body>
+
+</html>
